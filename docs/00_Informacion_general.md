@@ -5,7 +5,7 @@
 
 | | |
 | --- | --- |
-| **Autor** | |
+| **Autor** | Estudiante |
 | **Centro de Estudios** | SENATI |
 | **Carrera profesional** | Desarrollo de Software |
 | **Semestre** | Sexto |
@@ -81,20 +81,20 @@ Los pedidos llegan por mensajes sueltos, no se sabe qué tallas y colores quedan
 
 **Definition of Ready (antes de empezar)**
 
-- ☐ Está escrita como «Como… quiero… para…».
-- ☐ Tiene criterios de aceptación verificables.
-- ☐ Tiene puntos estimados.
-- ☐ Tiene su prototipo de pantalla.
-- ☐ Las tablas que usa están definidas.
+- ☑ Está escrita como «Como… quiero… para…».
+- ☑ Tiene criterios de aceptación verificables.
+- ☑ Tiene puntos estimados.
+- ☑ Tiene su prototipo de pantalla.
+- ☑ Las tablas que usa están definidas.
 
 **Definition of Done (para darla por terminada)**
 
-- ☐ Compila sin errores y corre en emulador o celular.
-- ☐ Cumple todos sus criterios de aceptación.
-- ☐ Los datos persisten al cerrar y abrir la app (Database Inspector).
-- ☐ Valida campos y muestra mensajes de error.
-- ☐ Está en GitHub con el commit «Sprint N: …».
-- ☐ Tiene captura de pantalla como evidencia.
+- ☑ Compila sin errores y corre en emulador o celular.
+- ☑ Cumple todos sus criterios de aceptación.
+- ☑ Los datos persisten al cerrar y abrir la app (Database Inspector).
+- ☑ Valida campos y muestra mensajes de error.
+- ☑ Está en GitHub con el commit «Sprint N: …».
+- ☑ Tiene captura de pantalla como evidencia.
 
 ## 4. Modelo de datos
 
@@ -124,9 +124,9 @@ Total: **13 historias · 55 puntos** (Fibonacci). Prioridad MoSCoW.
 
 | ID | Historia de usuario | Prioridad | Pts | Sprint | Estado |
 | --- | --- | --- | --- | --- | --- |
-| HU-01 | Login del administrador y acceso del cliente (administrador) | Alta (Must) | 2 | 1 | ☐ |
-| HU-02 | Menú principal y navegación (administrador) | Alta (Must) | 2 | 1 | ☐ |
-| HU-03 | Identidad visual del negocio (dueño del negocio) | Media (Should) | 1 | 1 | ☐ |
+| HU-01 | Login del administrador y acceso del cliente (administrador) | Alta (Must) | 2 | 1 | ☑ Hecho |
+| HU-02 | Menú principal y navegación (administrador) | Alta (Must) | 2 | 1 | ☑ Hecho |
+| HU-03 | Identidad visual del negocio (dueño del negocio) | Media (Should) | 1 | 1 | ☑ Hecho |
 | HU-04 | Base de datos y login con SQLite (administrador) | Alta (Must) | 3 | 2 | ☐ |
 | HU-05 | Registrar ropa con foto (administrador) | Alta (Must) | 8 | 2 | ☐ |
 | HU-06 | Catálogo del cliente por categoría (cliente) | Alta (Must) | 5 | 2 | ☐ |

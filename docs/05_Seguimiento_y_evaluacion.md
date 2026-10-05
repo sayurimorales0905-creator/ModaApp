@@ -6,11 +6,11 @@
 
 | Sprint | Puntos comprometidos | Puntos terminados | % cumplido |
 | --- | --- | --- | --- |
-| Sprint 1 | 5 | | |
+| Sprint 1 | 5 | 5 | 100% |
 | Sprint 2 | 16 | | |
 | Sprint 3 | 16 | | |
 | Sprint 4 | 18 | | |
-| **Total** | **55** | | |
+| **Total** | **55** | **5** | **9.1%** |
 
 ### Riesgos
 

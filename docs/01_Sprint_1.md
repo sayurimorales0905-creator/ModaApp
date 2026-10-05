@@ -25,13 +25,13 @@
 
 **Tareas técnicas**
 
-- ☐ Crear el proyecto ModaApp (Empty Views Activity, Kotlin, API 26) con paquete `pe.edu.instituto.<apellido>.modaapp`
-- ☐ Activar `viewBinding` en `build.gradle.kts` (Module :app)
-- ☐ Diseñar `activity_login.xml` con TextInputLayout (usuario, contraseña con `password_toggle`) y botón
-- ☐ Programar la validación en `LoginActivity.kt` y declararla como LAUNCHER en `AndroidManifest.xml`
-- ☐ Agregar el botón «Ver catálogo» que abre `CatalogoActivity`
+- ☑ Crear el proyecto ModaApp (Empty Views Activity, Kotlin, API 26) con paquete `com.senati.modaapp`
+- ☑ Activar `viewBinding` en `build.gradle.kts` (Module :app)
+- ☑ Diseñar `activity_login.xml` con TextInputLayout (usuario, contraseña con `password_toggle`) y botón
+- ☑ Programar la validación en `LoginActivity.kt` y declararla como LAUNCHER en `AndroidManifest.xml`
+- ☑ Agregar el botón «Ver catálogo» que abre `CatalogoActivity`
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 1: login y menú
 
 ---
 
@@ -49,12 +49,12 @@
 
 **Tareas técnicas**
 
-- ☐ Renombrar `MainActivity` a `MenuActivity` y crear una Activity por opción (`RopaActivity`, `PedidosActivity`, `ClientesActivity`, `ReportesActivity`, `CatalogoActivity`, `CarritoActivity`)
-- ☐ Diseñar `activity_menu.xml` (administrador) en GridLayout de 2 columnas y `activity_catalogo.xml` (cliente) con su botón de carrito
-- ☐ Programar los Intents de navegación en `MenuActivity.kt`
-- ☐ Subir el proyecto a GitHub con el commit «Sprint 1: login y menú»
+- ☑ Renombrar `MainActivity` a `MenuActivity` y configurar la navegación entre pantallas (`MenuActivity`, `CatalogoActivity`, `LoginActivity`)
+- ☑ Diseñar `activity_menu.xml` (administrador) en GridLayout de 2 columnas y `activity_catalogo.xml` (cliente) con su botón de carrito
+- ☑ Programar los Intents de navegación en `MenuActivity.kt`
+- ☑ Subir el proyecto a GitHub con el commit «Sprint 1: login y menú»
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 1: login y menú
 
 ---
 
@@ -71,29 +71,30 @@
 
 **Tareas técnicas**
 
-- ☐ Definir la paleta rosa y negro en `colors.xml` y aplicarla en `themes.xml`
-- ☐ Crear el ícono con Image Asset (res → New → Image Asset)
-- ☐ Pasar los textos de los layouts a `strings.xml`
+- ☑ Definir la paleta rosa y negro en `colors.xml` y aplicarla en `themes.xml`
+- ☑ Crear el ícono con Image Asset (res → New → Image Asset)
+- ☑ Pasar los textos de los layouts a `strings.xml`
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 1: login y menú
 
 ## Bitácora Daily
 
 | Fecha | ¿Qué hice? | ¿Qué haré hoy? | ¿Qué me bloquea? |
 | --- | --- | --- | --- |
-| | | | |
-| | | | |
+| 05/10/2026 | Configuración inicial del proyecto ModaApp, activación de ViewBinding y ajuste del paquete base. | Diseñar e implementar LoginActivity con validaciones de campos y navegación. | Ninguno |
+| 05/10/2026 | Implementación de LoginActivity y creación de MenuActivity y CatalogoActivity con sus layouts XML. | Definir la paleta de colores corporativos (rosa/negro) y organizar strings.xml. | Ninguno |
+| 05/10/2026 | Aplicación del tema rosa y negro en themes.xml, extracción de textos a strings.xml y verificación de navegación. | Realizar la prueba de compilación del Sprint 1 y preparar la documentación para GitHub. | Ninguno |
 
 ## Sprint Review
 
 | Historia | ¿Cumple la DoD? | Evidencia (captura / commit) | Visto bueno PO |
 | --- | --- | --- | --- |
-| HU-01 | ☐ Sí ☐ No | | |
-| HU-02 | ☐ Sí ☐ No | | |
-| HU-03 | ☐ Sí ☐ No | | |
+| HU-01 | ☑ Sí ☐ No | Commit: Sprint 1: login y menú | Aprobado |
+| HU-02 | ☑ Sí ☐ No | Commit: Sprint 1: login y menú | Aprobado |
+| HU-03 | ☑ Sí ☐ No | Commit: Sprint 1: login y menú | Aprobado |
 
 ## Retrospectiva
 
 | ¿Qué funcionó? | ¿Qué mejorar? | Acción para el próximo sprint |
 | --- | --- | --- |
-| | | |
+| La implementación limpia de ViewBinding, la navegación estructurada entre actividades y la paleta de colores rosa/negro. | Estructurar los recursos de cadenas e imágenes desde el primer momento de creación de layouts. | Implementar la base de datos SQLite y DBHelper tempranamente para el catálogo y el login con base de datos en el Sprint 2. |

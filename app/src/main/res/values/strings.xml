@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">ModaApp</string>
+    <string name="login_titulo">ModaApp</string>
+    <string name="login_subtitulo">Boutique Moda Urbana</string>
+    <string name="hint_usuario">Usuario</string>
+    <string name="hint_clave">Contraseña</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="btn_ver_catalogo">Ver catálogo</string>
+    <string name="error_usuario">Ingresa tu usuario</string>
+    <string name="error_clave">Ingresa tu contraseña</string>
+    <string name="error_credenciales">Credenciales incorrectas</string>
+
+    <!-- Menú Administrador -->
+    <string name="title_menu">Menú Principal</string>
+    <string name="subtitle_menu">Panel de Administración</string>
+    <string name="menu_ropa">Gestión de Ropa</string>
+    <string name="menu_pedidos">Atención de Pedidos</string>
+    <string name="menu_clientes">Lista de Clientes</string>
+    <string name="menu_reportes">Reportes y Stock</string>
+    <string name="btn_salir">Cerrar Sesión</string>
+
+    <!-- Catálogo Cliente -->
+    <string name="title_catalogo">Catálogo de Productos</string>
+    <string name="subtitle_catalogo">Explora nuestras colecciones</string>
+    <string name="btn_carrito">Ver Carrito</string>
+    <string name="cat_todas">Todas</string>
+    <string name="msg_catalogo_proximamente">El catálogo estará disponible en el Sprint 2</string>
+
+    <!-- General -->
+    <string name="app_tagline">Tu tienda de ropa favorita</string>
+    <string name="msg_pantalla_en_desarrollo">Pantalla en desarrollo</string>
 </resources>
