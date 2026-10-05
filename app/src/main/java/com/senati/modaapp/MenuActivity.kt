@@ -15,12 +15,20 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val nombre = intent.getStringExtra("nombre") ?: ""
+        val rol = intent.getStringExtra("rol") ?: ""
+        if (nombre.isNotEmpty() && rol.isNotEmpty()) {
+            binding.tvBienvenida.text = getString(R.string.bienvenida, nombre, rol)
+        } else {
+            binding.tvBienvenida.text = getString(R.string.title_menu)
+        }
+
         setupListeners()
     }
 
     private fun setupListeners() {
         binding.cardRopa.setOnClickListener {
-            Toast.makeText(this, "${getString(R.string.menu_ropa)} - ${getString(R.string.msg_pantalla_en_desarrollo)}", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, RopaActivity::class.java))
         }
 
         binding.cardPedidos.setOnClickListener {

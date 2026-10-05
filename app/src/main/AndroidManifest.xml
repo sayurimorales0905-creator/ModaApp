@@ -26,9 +26,20 @@
             android:exported="false" />
 
         <activity
-            android:name=".CatalogoActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".RopaActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RopaFormActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".CarritoActivity"
+            android:exported="false" />
 
     </application>
 

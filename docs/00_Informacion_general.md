@@ -127,9 +127,9 @@ Total: **13 historias · 55 puntos** (Fibonacci). Prioridad MoSCoW.
 | HU-01 | Login del administrador y acceso del cliente (administrador) | Alta (Must) | 2 | 1 | ☑ Hecho |
 | HU-02 | Menú principal y navegación (administrador) | Alta (Must) | 2 | 1 | ☑ Hecho |
 | HU-03 | Identidad visual del negocio (dueño del negocio) | Media (Should) | 1 | 1 | ☑ Hecho |
-| HU-04 | Base de datos y login con SQLite (administrador) | Alta (Must) | 3 | 2 | ☐ |
-| HU-05 | Registrar ropa con foto (administrador) | Alta (Must) | 8 | 2 | ☐ |
-| HU-06 | Catálogo del cliente por categoría (cliente) | Alta (Must) | 5 | 2 | ☐ |
+| HU-04 | Base de datos y login con SQLite (administrador) | Alta (Must) | 3 | 2 | ☑ Hecho |
+| HU-05 | Registrar ropa con foto (administrador) | Alta (Must) | 8 | 2 | ☑ Hecho |
+| HU-06 | Catálogo del cliente por categoría (cliente) | Alta (Must) | 5 | 2 | ☑ Hecho |
 | HU-07 | Editar, eliminar y buscar ropa (administrador) | Alta (Must) | 3 | 3 | ☐ |
 | HU-08 | Carrito de compras (cliente) | Alta (Must) | 5 | 3 | ☐ |
 | HU-09 | Hacer pedido con el número de teléfono (cliente) | Alta (Must) | 8 | 3 | ☐ |

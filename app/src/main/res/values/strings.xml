@@ -9,6 +9,7 @@
     <string name="error_usuario">Ingresa tu usuario</string>
     <string name="error_clave">Ingresa tu contraseña</string>
     <string name="error_credenciales">Credenciales incorrectas</string>
+    <string name="bienvenida">Hola, %1$s (%2$s)</string>
 
     <!-- Menú Administrador -->
     <string name="title_menu">Menú Principal</string>
@@ -22,9 +23,32 @@
     <!-- Catálogo Cliente -->
     <string name="title_catalogo">Catálogo de Productos</string>
     <string name="subtitle_catalogo">Explora nuestras colecciones</string>
-    <string name="btn_carrito">Ver Carrito</string>
+    <string name="btn_carrito">Carrito</string>
     <string name="cat_todas">Todas</string>
     <string name="msg_catalogo_proximamente">El catálogo estará disponible en el Sprint 2</string>
+
+    <!-- Sprint 2 Ropa y Catálogo -->
+    <string name="btn_agregar_prenda">Agregar prenda</string>
+    <string name="btn_elegir_foto">Elegir foto</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="hint_modelo">Modelo</string>
+    <string name="hint_marca">Marca</string>
+    <string name="hint_color">Color</string>
+    <string name="hint_precio">Precio (S/)</string>
+    <string name="hint_cantidad">Cantidad</string>
+    <string name="label_categoria">Categoría</string>
+    <string name="label_talla">Talla</string>
+    <string name="error_modelo">Ingresa el modelo</string>
+    <string name="error_precio">Ingresa un precio mayor a 0</string>
+    <string name="error_cantidad">Ingresa la cantidad</string>
+    <string name="error_foto">Elige una foto de la prenda</string>
+    <string name="msg_prenda_guardada">Prenda guardada</string>
+    <string name="ropa_detalle">Talla %1$s · %2$s · %3$s</string>
+    <string name="ropa_stock">Cantidad: %1$d · S/ %2$.2f</string>
+    <string name="talla_fmt">Talla %1$s</string>
+    <string name="precio_fmt">S/ %1$.2f</string>
+    <string name="todas">Todas</string>
+    <string name="sin_prendas">No hay prendas disponibles</string>
 
     <!-- General -->
     <string name="app_tagline">Tu tienda de ropa favorita</string>

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.senati.modaapp.data.DBHelper
 import com.senati.modaapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -40,9 +41,13 @@ class LoginActivity : AppCompatActivity() {
         }
         if (!valido) return
 
-        if (usuario == "admin" && clave == "1234") {
-            startActivity(Intent(this, MenuActivity::class.java))
-            finish() // el botón "atrás" ya no regresa al login
+        val user = DBHelper(this).validarUsuario(usuario, clave)
+        if (user != null) {
+            val intent = Intent(this, MenuActivity::class.java)
+            intent.putExtra("nombre", user.usuario)
+            intent.putExtra("rol", user.rol)
+            startActivity(intent)
+            finish()
         } else {
             Toast.makeText(this, R.string.error_credenciales, Toast.LENGTH_SHORT).show()
         }

@@ -24,12 +24,12 @@
 
 **Tareas técnicas**
 
-- ☐ Crear `data/DBHelper.kt` (SQLiteOpenHelper) con `DB_NAME = "modaapp.db"` y `DB_VERSION = 1`
-- ☐ Crear la tabla `usuario` e insertar el admin en `onCreate`; activar FOREIGN KEY en `onConfigure`
-- ☐ Agregar `validarUsuario(usuario, clave)` y usarla en `LoginActivity`
-- ☐ Verificar la BD en Database Inspector
+- ☑ Crear `data/DBHelper.kt` (SQLiteOpenHelper) con `DB_NAME = "modaapp.db"` y `DB_VERSION = 1`
+- ☑ Crear la tabla `usuario` e insertar el admin en `onCreate`; activar FOREIGN KEY en `onConfigure`
+- ☑ Agregar `validarUsuario(usuario, clave)` y usarla en `LoginActivity`
+- ☑ Verificar la BD en Database Inspector
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 2: HU-04 base de datos y login con SQLite
 
 ---
 
@@ -47,12 +47,12 @@
 
 **Tareas técnicas**
 
-- ☐ Crear las tablas `categoria` (con 5 categorías insertadas en `onCreate`) y `ropa`
-- ☐ Elegir la foto con `registerForActivityResult(ActivityResultContracts.PickVisualMedia())`
-- ☐ Copiar la imagen a `filesDir` con `contentResolver.openInputStream` y guardar la ruta
-- ☐ `RopaDao` (insertar, listar) y `RopaAdapter` con ImageView (`BitmapFactory.decodeFile`)
+- ☑ Crear las tablas `categoria` (con 5 categorías insertadas en `onCreate`) y `ropa`
+- ☑ Elegir la foto con `registerForActivityResult(ActivityResultContracts.PickVisualMedia())`
+- ☑ Copiar la imagen a `filesDir` con `contentResolver.openInputStream` y guardar la ruta
+- ☑ `RopaDao` (insertar, listar) y `RopaAdapter` con ImageView (`BitmapFactory.decodeFile`)
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 2: HU-05 registrar ropa con foto
 
 ---
 
@@ -69,29 +69,30 @@
 
 **Tareas técnicas**
 
-- ☐ `RopaDao.listarDisponibles(idCategoria)` con `WHERE cantidad > 0`
-- ☐ ChipGroup de categorías cargado desde la tabla `categoria`
-- ☐ RecyclerView con `GridLayoutManager(this, 2)` e `item_catalogo.xml`
+- ☑ `RopaDao.listarDisponibles(idCategoria)` con `WHERE cantidad > 0`
+- ☑ ChipGroup de categorías cargado desde la tabla `categoria`
+- ☑ RecyclerView con `GridLayoutManager(this, 2)` e `item_catalogo.xml`
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 2: HU-06 catálogo del cliente por categoría
 
 ## Bitácora Daily
 
 | Fecha | ¿Qué hice? | ¿Qué haré hoy? | ¿Qué me bloquea? |
 | --- | --- | --- | --- |
-| | | | |
-| | | | |
+| 05/10/2026 | Creación del modelo Usuario, DBHelper con SQLite para la tabla usuario y login parametrizado | Implementar la visualización del nombre y rol en MenuActivity | Ninguno |
+| 05/10/2026 | Creación de las tablas categoria y ropa en DBHelper, desarrollo de RopaDao, RopaAdapter, RopaActivity y RopaFormActivity con selector de foto | Implementar el catálogo del cliente con filtro dinámico por chips de categoría | Ninguno |
+| 05/10/2026 | Implementación de CatalogoActivity con GridLayoutManager (2 columnas), ChipGroup dinámico y consulta de prendas disponibles (cantidad > 0) | Probar todo el flujo del Sprint 2 y registrar documentación | Ninguno |
 
 ## Sprint Review
 
 | Historia | ¿Cumple la DoD? | Evidencia (captura / commit) | Visto bueno PO |
 | --- | --- | --- | --- |
-| HU-04 | ☐ Sí ☐ No | | |
-| HU-05 | ☐ Sí ☐ No | | |
-| HU-06 | ☐ Sí ☐ No | | |
+| HU-04 | ☑ Sí ☐ No | Commit: Sprint 2: HU-04 base de datos y login con SQLite | Aprobado |
+| HU-05 | ☑ Sí ☐ No | Commit: Sprint 2: HU-05 registrar ropa con foto | Aprobado |
+| HU-06 | ☑ Sí ☐ No | Commit: Sprint 2: HU-06 catálogo del cliente por categoría | Aprobado |
 
 ## Retrospectiva
 
 | ¿Qué funcionó? | ¿Qué mejorar? | Acción para el próximo sprint |
 | --- | --- | --- |
-| | | |
+| La gestión centralizada de SQLite mediante SQLiteOpenHelper, la optimización en la carga de imágenes con BitmapFactory y la fluidez del filtro por chips en el catálogo. | Controlar la desinstalación y actualización limpia de la base de datos local durante las pruebas. | Implementar las tablas cliente, pedido y detalle_pedido incrementando DB_VERSION a 2 con migración en onUpgrade para el Sprint 3. |
