@@ -50,6 +50,49 @@
     <string name="todas">Todas</string>
     <string name="sin_prendas">No hay prendas disponibles</string>
 
+    <!-- Sprint 3 HU-07: Editar, eliminar y buscar -->
+    <string name="btn_actualizar">Actualizar</string>
+    <string name="btn_eliminar">Eliminar</string>
+    <string name="hint_buscar">Buscar por modelo, marca o color</string>
+    <string name="msg_prenda_actualizada">Prenda actualizada</string>
+    <string name="msg_prenda_eliminada">Prenda eliminada</string>
+    <string name="error_eliminar">No se puede eliminar: tiene pedidos</string>
+    <string name="titulo_eliminar">Eliminar prenda</string>
+    <string name="msg_confirmar_eliminar">¿Seguro que quieres eliminar esta prenda?</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+
+    <!-- Sprint 3 HU-08: Carrito de compras -->
+    <string name="btn_agregar">Agregar</string>
+    <string name="btn_carrito_n">Carrito (%1$d)</string>
+    <string name="disponible_fmt">Disponible: %1$d</string>
+    <string name="msg_agregada">Agregado al carrito</string>
+    <string name="msg_sin_stock_carrito">Ya tienes todo el stock disponible en tu carrito</string>
+    <string name="carrito_vacio">Tu carrito está vacío</string>
+    <string name="btn_hacer_pedido">Hacer pedido</string>
+    <string name="total_fmt">Total: S/ %1$.2f</string>
+    <string name="subtotal_fmt">S/ %1$.2f</string>
+    <string name="item_carrito_detalle">Talla %1$s · %2$d × S/ %3$.2f</string>
+    <string name="hint_quitar">Mantén presionada una prenda para quitarla</string>
+    <string name="titulo_quitar">Quitar prenda</string>
+    <string name="msg_confirmar_quitar">¿Quitar esta prenda del carrito?</string>
+
+    <!-- Sprint 3 HU-09: Pedido con teléfono -->
+    <string name="hint_telefono">Teléfono (9 dígitos)</string>
+    <string name="hint_nombres">Nombres</string>
+    <string name="hint_apellidos">Apellidos</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="btn_registrar">Registrar cliente</string>
+    <string name="btn_confirmar">Confirmar pedido</string>
+    <string name="hola_fmt">Hola, %1$s</string>
+    <string name="resumen_total">Total del pedido: S/ %1$.2f</string>
+    <string name="error_telefono">Ingresa un teléfono de 9 dígitos</string>
+    <string name="error_nombres">Ingresa tus nombres</string>
+    <string name="error_apellidos">Ingresa tus apellidos</string>
+    <string name="msg_cliente_nuevo">Teléfono nuevo: completa tus datos</string>
+    <string name="msg_error_cliente">No se pudo registrar el cliente</string>
+    <string name="pedido_registrado">Pedido #%1$d registrado</string>
+
     <!-- General -->
     <string name="app_tagline">Tu tienda de ropa favorita</string>
     <string name="msg_pantalla_en_desarrollo">Pantalla en desarrollo</string>

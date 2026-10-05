@@ -129,5 +129,14 @@
             android:layout_height="56dp"
             android:layout_marginTop="20dp"
             android:text="@string/btn_guardar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEliminar"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/btn_eliminar"
+            android:visibility="gone" />
     </LinearLayout>
 </ScrollView>

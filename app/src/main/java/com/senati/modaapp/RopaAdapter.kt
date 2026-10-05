@@ -7,7 +7,10 @@ import com.senati.modaapp.databinding.ItemRopaBinding
 import com.senati.modaapp.model.Ropa
 import com.senati.modaapp.util.cargarFoto
 
-class RopaAdapter(private var items: List<Ropa>) : RecyclerView.Adapter<RopaAdapter.VH>() {
+class RopaAdapter(
+    private var items: List<Ropa>,
+    private val onClick: (Ropa) -> Unit
+) : RecyclerView.Adapter<RopaAdapter.VH>() {
 
     class VH(val b: ItemRopaBinding) : RecyclerView.ViewHolder(b.root)
 
@@ -23,6 +26,7 @@ class RopaAdapter(private var items: List<Ropa>) : RecyclerView.Adapter<RopaAdap
         h.b.tvDetalle.text = ctx.getString(R.string.ropa_detalle, r.talla, r.color, r.marca)
         h.b.tvStock.text = ctx.getString(R.string.ropa_stock, r.cantidad, r.precio)
         h.b.ivFoto.setImageBitmap(cargarFoto(r.foto, 200))
+        h.itemView.setOnClickListener { onClick(r) }
     }
 
     fun actualizar(nuevos: List<Ropa>) {

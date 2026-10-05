@@ -23,12 +23,12 @@
 
 **Tareas técnicas**
 
-- ☐ `obtener()`, `actualizar()`, `eliminar()`, `listar(filtro)` en `RopaDao`
-- ☐ Modo edición con `putExtra("id")` y cambio opcional de foto
-- ☐ AlertDialog + `SQLiteConstraintException`
-- ☐ Buscador con `LIKE` en modelo, marca y color
+- ☑ `obtener()`, `actualizar()`, `eliminar()`, `listar(filtro)` en `RopaDao`
+- ☑ Modo edición con `putExtra("id")` y cambio opcional de foto
+- ☑ AlertDialog + `SQLiteConstraintException`
+- ☑ Buscador con `LIKE` en modelo, marca y color
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 3: HU-07 editar, eliminar y buscar ropa
 
 ---
 
@@ -46,11 +46,11 @@
 
 **Tareas técnicas**
 
-- ☐ `object Carrito` (singleton) con lista mutable de `ItemCarrito(ropa, cantidad)`
-- ☐ Ícono de carrito con contador en `CatalogoActivity`
-- ☐ `CarritoActivity` con RecyclerView y total
+- ☑ `object Carrito` (singleton) con lista mutable de `ItemCarrito(ropa, cantidad)`
+- ☑ Ícono de carrito con contador en `CatalogoActivity`
+- ☑ `CarritoActivity` con RecyclerView y total
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 3: HU-08 carrito de compras
 
 ---
 
@@ -68,30 +68,31 @@
 
 **Tareas técnicas**
 
-- ☐ `DB_VERSION = 2` con tablas `cliente`, `pedido` y `detalle_pedido` (`onUpgrade`)
-- ☐ `ClienteDao.buscarPorTelefono()` e `insertar()`
-- ☐ `PedidoDao.registrar(idCliente, items)` con `beginTransaction` / `setTransactionSuccessful` / `endTransaction`
-- ☐ `PedidoActivity`: teléfono y, si es nuevo, nombres y apellidos (visibility GONE/VISIBLE)
+- ☑ `DB_VERSION = 2` con tablas `cliente`, `pedido` y `detalle_pedido` (`onUpgrade`)
+- ☑ `ClienteDao.buscarPorTelefono()` e `insertar()`
+- ☑ `PedidoDao.registrar(idCliente, items)` con `beginTransaction` / `setTransactionSuccessful` / `endTransaction`
+- ☑ `PedidoActivity`: teléfono y, si es nuevo, nombres y apellidos (visibility GONE/VISIBLE)
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 3: HU-09 hacer pedido con teléfono
 
 ## Bitácora Daily
 
 | Fecha | ¿Qué hice? | ¿Qué haré hoy? | ¿Qué me bloquea? |
 | --- | --- | --- | --- |
-| | | | |
-| | | | |
+| 05/10/2026 | Implementación de las funciones de actualizar, eliminar, obtener y búsqueda por filtro LIKE en RopaDao y actualización de RopaActivity / RopaFormActivity. | Implementar el modelo Singleton Carrito, NumberPicker para limitar por stock y CarritoActivity. | Ninguno |
+| 05/10/2026 | Desarrollo de CarritoActivity, CarritoAdapter, contador dinámico en el FAB del catálogo y diálogo de confirmación para eliminar ítems del carrito. | Incrementar DB_VERSION a 2 con las tablas cliente, pedido y detalle_pedido e implementar PedidoActivity. | Ninguno |
+| 05/10/2026 | Implementación de ClienteDao, PedidoDao con transacciones SQLite, validación de cliente por teléfono y confirmación de pedidos. | Realizar pruebas finales del Sprint 3 y actualizar la documentación del proyecto. | Ninguno |
 
 ## Sprint Review
 
 | Historia | ¿Cumple la DoD? | Evidencia (captura / commit) | Visto bueno PO |
 | --- | --- | --- | --- |
-| HU-07 | ☐ Sí ☐ No | | |
-| HU-08 | ☐ Sí ☐ No | | |
-| HU-09 | ☐ Sí ☐ No | | |
+| HU-07 | ☑ Sí ☐ No | Commit: Sprint 3: HU-07 editar, eliminar y buscar ropa | Aprobado |
+| HU-08 | ☑ Sí ☐ No | Commit: Sprint 3: HU-08 carrito de compras | Aprobado |
+| HU-09 | ☑ Sí ☐ No | Commit: Sprint 3: HU-09 hacer pedido con teléfono | Aprobado |
 
 ## Retrospectiva
 
 | ¿Qué funcionó? | ¿Qué mejorar? | Acción para el próximo sprint |
 | --- | --- | --- |
-| | | |
+| El uso de transacciones en SQLite para la integridad del pedido, la sincronización en tiempo real del estado del carrito y la reutilización del flujo de cliente. | Asegurar que las migraciones en `onUpgrade` mantengan intactos los datos de catálogo existentes al subir la versión de la BD. | Implementar el envío de pedidos por WhatsApp, la atención de pedidos por el administrador y los reportes para el Sprint 4. |

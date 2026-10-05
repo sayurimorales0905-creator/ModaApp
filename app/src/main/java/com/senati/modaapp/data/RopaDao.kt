@@ -16,6 +16,17 @@ class RopaDao(context: Context) {
                FROM ropa r INNER JOIN categoria c ON c.id = r.id_categoria"""
     }
 
+    private fun valores(r: Ropa) = ContentValues().apply {
+        put("modelo", r.modelo)
+        put("id_categoria", r.idCategoria)
+        put("talla", r.talla)
+        put("marca", r.marca)
+        put("color", r.color)
+        put("precio", r.precio)
+        put("cantidad", r.cantidad)
+        put("foto", r.foto)
+    }
+
     fun listarCategorias(): List<Categoria> {
         val lista = mutableListOf<Categoria>()
         helper.readableDatabase.rawQuery("SELECT id, nombre FROM categoria ORDER BY id", null).use { c ->
@@ -24,21 +35,25 @@ class RopaDao(context: Context) {
         return lista
     }
 
-    fun insertar(r: Ropa): Long {
-        val valores = ContentValues().apply {
-            put("modelo", r.modelo)
-            put("id_categoria", r.idCategoria)
-            put("talla", r.talla)
-            put("marca", r.marca)
-            put("color", r.color)
-            put("precio", r.precio)
-            put("cantidad", r.cantidad)
-            put("foto", r.foto)
-        }
-        return helper.writableDatabase.insert("ropa", null, valores)
-    }
+    fun insertar(r: Ropa): Long = helper.writableDatabase.insert("ropa", null, valores(r))
 
-    fun listar(): List<Ropa> = consultar("$SELECT_ROPA ORDER BY r.id DESC", null)
+    fun actualizar(r: Ropa): Int =
+        helper.writableDatabase.update("ropa", valores(r), "id = ?", arrayOf(r.id.toString()))
+
+    fun eliminar(id: Int): Int =
+        helper.writableDatabase.delete("ropa", "id = ?", arrayOf(id.toString()))
+
+    fun obtener(id: Int): Ropa? =
+        consultar("$SELECT_ROPA WHERE r.id = ?", arrayOf(id.toString())).firstOrNull()
+
+    fun listar(filtro: String = ""): List<Ropa> {
+        if (filtro.isBlank()) return consultar("$SELECT_ROPA ORDER BY r.id DESC", null)
+        val like = "%${filtro.trim()}%"
+        return consultar(
+            "$SELECT_ROPA WHERE r.modelo LIKE ? OR r.marca LIKE ? OR r.color LIKE ? ORDER BY r.id DESC",
+            arrayOf(like, like, like)
+        )
+    }
 
     fun listarDisponibles(idCategoria: Int?): List<Ropa> {
         return if (idCategoria == null) {

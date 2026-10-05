@@ -130,9 +130,9 @@ Total: **13 historias · 55 puntos** (Fibonacci). Prioridad MoSCoW.
 | HU-04 | Base de datos y login con SQLite (administrador) | Alta (Must) | 3 | 2 | ☑ Hecho |
 | HU-05 | Registrar ropa con foto (administrador) | Alta (Must) | 8 | 2 | ☑ Hecho |
 | HU-06 | Catálogo del cliente por categoría (cliente) | Alta (Must) | 5 | 2 | ☑ Hecho |
-| HU-07 | Editar, eliminar y buscar ropa (administrador) | Alta (Must) | 3 | 3 | ☐ |
-| HU-08 | Carrito de compras (cliente) | Alta (Must) | 5 | 3 | ☐ |
-| HU-09 | Hacer pedido con el número de teléfono (cliente) | Alta (Must) | 8 | 3 | ☐ |
+| HU-07 | Editar, eliminar y buscar ropa (administrador) | Alta (Must) | 3 | 3 | ☑ Hecho |
+| HU-08 | Carrito de compras (cliente) | Alta (Must) | 5 | 3 | ☑ Hecho |
+| HU-09 | Hacer pedido con el número de teléfono (cliente) | Alta (Must) | 8 | 3 | ☑ Hecho |
 | HU-10 | Avisar el pedido por WhatsApp al cliente y al administrador (cliente) | Alta (Must) | 5 | 4 | ☐ |
 | HU-11 | Lista de pedidos y atención (administrador) | Alta (Must) | 5 | 4 | ☐ |
 | HU-12 | Reportes: pedidos atendidos, stock y clientes (administrador) | Alta (Must) | 5 | 4 | ☐ |

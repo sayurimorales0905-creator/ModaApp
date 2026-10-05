@@ -9,7 +9,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
 
     companion object {
         const val DB_NAME = "modaapp.db"
-        const val DB_VERSION = 1
+        const val DB_VERSION = 2
     }
 
     override fun onConfigure(db: SQLiteDatabase) {
@@ -46,10 +46,44 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
                 foto TEXT,
                 FOREIGN KEY (id_categoria) REFERENCES categoria(id))"""
         )
+
+        crearTablasPedido(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
-        // Se llena en el Sprint 3 (DB_VERSION = 2)
+        if (oldVersion < 2) crearTablasPedido(db)
+    }
+
+    private fun crearTablasPedido(db: SQLiteDatabase) {
+        db.execSQL(
+            """CREATE TABLE cliente (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                telefono TEXT UNIQUE NOT NULL,
+                nombres TEXT NOT NULL,
+                apellidos TEXT NOT NULL,
+                fecha_registro TEXT NOT NULL)"""
+        )
+        db.execSQL(
+            """CREATE TABLE pedido (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id_cliente INTEGER NOT NULL,
+                fecha TEXT NOT NULL,
+                total REAL NOT NULL,
+                estado TEXT NOT NULL DEFAULT 'PENDIENTE',
+                fecha_atencion TEXT,
+                FOREIGN KEY (id_cliente) REFERENCES cliente(id))"""
+        )
+        db.execSQL(
+            """CREATE TABLE detalle_pedido (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                id_pedido INTEGER NOT NULL,
+                id_ropa INTEGER NOT NULL,
+                cantidad INTEGER NOT NULL CHECK(cantidad > 0),
+                precio_unit REAL NOT NULL,
+                subtotal REAL NOT NULL,
+                FOREIGN KEY (id_pedido) REFERENCES pedido(id) ON DELETE CASCADE,
+                FOREIGN KEY (id_ropa) REFERENCES ropa(id))"""
+        )
     }
 
     fun validarUsuario(usuario: String, clave: String): Usuario? {

@@ -7,8 +7,10 @@ import com.senati.modaapp.databinding.ItemCatalogoBinding
 import com.senati.modaapp.model.Ropa
 import com.senati.modaapp.util.cargarFoto
 
-class CatalogoAdapter(private var items: List<Ropa>) :
-    RecyclerView.Adapter<CatalogoAdapter.VH>() {
+class CatalogoAdapter(
+    private var items: List<Ropa>,
+    private val onAgregar: (Ropa) -> Unit
+) : RecyclerView.Adapter<CatalogoAdapter.VH>() {
 
     class VH(val b: ItemCatalogoBinding) : RecyclerView.ViewHolder(b.root)
 
@@ -24,6 +26,7 @@ class CatalogoAdapter(private var items: List<Ropa>) :
         h.b.tvTalla.text = ctx.getString(R.string.talla_fmt, r.talla)
         h.b.tvPrecio.text = ctx.getString(R.string.precio_fmt, r.precio)
         h.b.ivFoto.setImageBitmap(cargarFoto(r.foto, 400))
+        h.b.btnAgregar.setOnClickListener { onAgregar(r) }
     }
 
     fun actualizar(nuevos: List<Ropa>) {
