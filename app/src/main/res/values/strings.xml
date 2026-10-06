@@ -93,6 +93,38 @@
     <string name="msg_error_cliente">No se pudo registrar el cliente</string>
     <string name="pedido_registrado">Pedido #%1$d registrado</string>
 
+    <!-- Sprint 4 HU-10: WhatsApp -->
+    <string name="error_whatsapp">WhatsApp no está instalado</string>
+    <string name="btn_whats_cliente">Enviar a mi WhatsApp</string>
+    <string name="btn_whats_tienda">Avisar a la tienda</string>
+    <string name="btn_volver_catalogo">Volver al catálogo</string>
+    <string name="aviso_whatsapp">En WhatsApp solo toca «Enviar»: el mensaje ya está escrito.</string>
+
+    <!-- Sprint 4 HU-11: Atender pedidos -->
+    <string name="chip_pendientes">Pendientes</string>
+    <string name="chip_atendidos">Atendidos</string>
+    <string name="sin_pedidos">No hay pedidos en esta lista</string>
+    <string name="pedido_num">Pedido #%1$d</string>
+    <string name="detalle_cliente">Cliente: %1$s</string>
+    <string name="detalle_telefono">Teléfono: %1$s</string>
+    <string name="detalle_fecha">Fecha: %1$s</string>
+    <string name="detalle_estado">Estado: %1$s</string>
+    <string name="linea_detalle">Talla %1$s · %2$s · x%3$d</string>
+    <string name="btn_marcar_atendido">Marcar como atendido</string>
+    <string name="titulo_atender">Atender pedido</string>
+    <string name="msg_confirmar_atender">Se descontará el stock de cada prenda. ¿Continuar?</string>
+    <string name="msg_pedido_atendido">Pedido atendido</string>
+    <string name="error_stock_insuficiente">Stock insuficiente: %1$s</string>
+
+    <!-- Sprint 4 HU-12: Reportes -->
+    <string name="reporte_atendidos">Pedidos atendidos este mes: %1$d</string>
+    <string name="reporte_monto">Monto vendido este mes: S/ %1$.2f</string>
+    <string name="titulo_stock">Stock por prenda</string>
+    <string name="stock_item">%1$s · talla %2$s · %3$s</string>
+    <string name="stock_cant">Cantidad: %1$d</string>
+    <string name="stock_bajo">Stock bajo</string>
+    <string name="cliente_pedidos">Pedidos: %1$d</string>
+
     <!-- General -->
     <string name="app_tagline">Tu tienda de ropa favorita</string>
     <string name="msg_pantalla_en_desarrollo">Pantalla en desarrollo</string>

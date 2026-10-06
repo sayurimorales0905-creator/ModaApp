@@ -10,6 +10,7 @@ import com.senati.modaapp.data.PedidoDao
 import com.senati.modaapp.databinding.ActivityPedidoBinding
 import com.senati.modaapp.model.Carrito
 import com.senati.modaapp.model.Cliente
+import java.util.Locale
 
 class PedidoActivity : AppCompatActivity() {
 
@@ -106,13 +107,37 @@ class PedidoActivity : AppCompatActivity() {
             return
         }
 
-        val idPedido = pedidoDao.registrar(c.id, Carrito.items.toList())
-        Carrito.vaciar()
-        Toast.makeText(this, getString(R.string.pedido_registrado, idPedido), Toast.LENGTH_LONG).show()
+        val items = Carrito.items.toList()
+        val idPedido = pedidoDao.registrar(c.id, items)
 
-        // Vuelve al catálogo y cierra carrito y pedido
-        val intent = Intent(this, CatalogoActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        val detalle = items.joinToString("\n") {
+            "- ${it.ropa.modelo} (talla ${it.ropa.talla}, ${it.ropa.color}) x${it.cantidad}"
+        }
+        val total = "%.2f".format(Locale.US, Carrito.total())
+
+        val msgCliente = buildString {
+            appendLine("Hola ${c.nombres}, tu pedido #$idPedido en Boutique Moda Urbana fue registrado.")
+            appendLine(detalle)
+            appendLine("Total: S/ $total")
+            append("Estado: PENDIENTE")
+        }
+        val msgTienda = buildString {
+            appendLine("Nuevo pedido #$idPedido")
+            appendLine("Cliente: ${c.nombres} ${c.apellidos}")
+            appendLine("Teléfono: ${c.telefono}")
+            appendLine(detalle)
+            appendLine("Total: S/ $total")
+            append("Estado: PENDIENTE")
+        }
+
+        Carrito.vaciar()
+
+        val intent = Intent(this, PedidoListoActivity::class.java)
+        intent.putExtra("idPedido", idPedido)
+        intent.putExtra("telCliente", c.telefono)
+        intent.putExtra("msgCliente", msgCliente)
+        intent.putExtra("msgTienda", msgTienda)
         startActivity(intent)
+        finish()
     }
 }

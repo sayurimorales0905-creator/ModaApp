@@ -8,9 +8,9 @@
 | --- | --- | --- | --- |
 | Sprint 1 | 5 | 5 | 100% |
 | Sprint 2 | 16 | 16 | 100% |
-| Sprint 3 | 16 | | |
-| Sprint 4 | 18 | | |
-| **Total** | **55** | **21** | **38.2%** |
+| Sprint 3 | 16 | 16 | 100% |
+| Sprint 4 | 18 | 18 | 100% |
+| **Total** | **55** | **55** | **100%** |
 
 ### Riesgos
 
@@ -25,8 +25,7 @@
 
 | Fecha | Impedimento | Acción tomada | ¿Resuelto? |
 | --- | --- | --- | --- |
-| | | | ☐ |
-| | | | ☐ |
+| 05/10/2026 | Error de vinculación ViewBinding en PedidoListoActivity por nombre de layout incorrecto | Renombrado de layout XML a activity_pedido_listo.xml para coincidir con la clase de ViewBinding | ☑ |
 
 ## 9. Evaluación y entrega
 

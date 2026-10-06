@@ -9,7 +9,10 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
 
     companion object {
         const val DB_NAME = "modaapp.db"
-        const val DB_VERSION = 2
+        const val DB_VERSION = 3
+
+        // Número que recibe los WhatsApp de pedidos (9 dígitos, sin +51)
+        const val TELEFONO_TIENDA = "957785535"
     }
 
     override fun onConfigure(db: SQLiteDatabase) {
@@ -26,7 +29,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
                 rol TEXT NOT NULL,
                 telefono TEXT)"""
         )
-        db.execSQL("INSERT INTO usuario (usuario, clave, rol, telefono) VALUES ('admin', '1234', 'ADMIN', '999999999')")
+        db.execSQL("INSERT INTO usuario (usuario, clave, rol, telefono) VALUES ('admin', '1234', 'ADMIN', '957785535')")
 
         db.execSQL("CREATE TABLE categoria (id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT UNIQUE NOT NULL)")
         listOf("Polos", "Pantalones", "Vestidos", "Casacas", "Zapatillas").forEach {
@@ -52,6 +55,9 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         if (oldVersion < 2) crearTablasPedido(db)
+        if (oldVersion < 3) {
+            db.execSQL("UPDATE usuario SET telefono = ? WHERE rol = 'ADMIN'", arrayOf(TELEFONO_TIENDA))
+        }
     }
 
     private fun crearTablasPedido(db: SQLiteDatabase) {
@@ -84,6 +90,15 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_V
                 FOREIGN KEY (id_pedido) REFERENCES pedido(id) ON DELETE CASCADE,
                 FOREIGN KEY (id_ropa) REFERENCES ropa(id))"""
         )
+    }
+
+    fun telefonoAdmin(): String {
+        readableDatabase.rawQuery(
+            "SELECT telefono FROM usuario WHERE rol = 'ADMIN' LIMIT 1", null
+        ).use { c ->
+            if (c.moveToFirst()) return c.getString(0) ?: ""
+        }
+        return ""
     }
 
     fun validarUsuario(usuario: String, clave: String): Usuario? {

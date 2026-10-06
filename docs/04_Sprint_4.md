@@ -24,12 +24,12 @@
 
 **Tareas técnicas**
 
-- ☐ Función `abrirWhatsApp(telefono, mensaje)` con `Intent(ACTION_VIEW, Uri.parse("https://wa.me/51$telefono?text=" + Uri.encode(mensaje)))`
-- ☐ Construir los dos mensajes con `buildString`
-- ☐ Leer el teléfono del administrador desde la tabla `usuario`
-- ☐ Capturar `ActivityNotFoundException`
+- ☑ Función `abrirWhatsApp(telefono, mensaje)` con `Intent(ACTION_VIEW, Uri.parse("https://wa.me/51$telefono?text=" + Uri.encode(mensaje)))`
+- ☑ Construir los dos mensajes con `buildString`
+- ☑ Leer el teléfono del administrador desde la tabla `usuario`
+- ☑ Capturar `ActivityNotFoundException`
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 4: HU-10 aviso del pedido por WhatsApp
 
 ---
 
@@ -38,7 +38,7 @@
 - **Historia de usuario:** Como **administrador**, quiero **ver los pedidos y marcarlos como atendidos**, para saber qué falta entregar y descontar el stock.
 - **Prioridad:** Alta (Must) · **Puntos:** 5 · **Sprint:** 4 · **Prototipo:** P2-08
 
-**Criterios de aceptación**
+**Criterios de acceptance**
 
 1. **CA1.** Dado que abro Pedidos, cuando elijo «Pendientes» o «Atendidos», entonces veo los pedidos de ese estado con cliente, fecha y total, del más reciente al más antiguo.
 2. **CA2.** Dado que toco un pedido, cuando se abre el detalle, entonces veo las prendas con foto, talla, color y cantidad, y el teléfono del cliente.
@@ -47,11 +47,11 @@
 
 **Tareas técnicas**
 
-- ☐ `PedidoDao.listarPorEstado(estado)` con JOIN `cliente`
-- ☐ `PedidoDao.atender(idPedido)` con transacción y validación de stock
-- ☐ `PedidosActivity` con selector Pendientes / Atendidos y `DetallePedidoActivity`
+- ☑ `PedidoDao.listarPorEstado(estado)` con JOIN `cliente`
+- ☑ `PedidoDao.atender(idPedido)` con transacción y validación de stock
+- ☑ `PedidosActivity` con selector Pendientes / Atendidos y `DetallePedidoActivity`
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 4: HU-11 lista de pedidos y atención
 
 ---
 
@@ -68,11 +68,11 @@
 
 **Tareas técnicas**
 
-- ☐ `ReporteDao`: `atendidosDelMes()`, `stockPorPrenda()`, `clientesConPedidos()`
-- ☐ `ReportesActivity` y `ClientesActivity`
-- ☐ Probar las consultas en Database Inspector
+- ☑ `ReporteDao`: `atendidosDelMes()`, `stockPorPrenda()`, `clientesConPedidos()`
+- ☑ `ReportesActivity` y `ClientesActivity`
+- ☑ Probar las consultas en Database Inspector
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 4: HU-12 reportes y clientes
 
 ---
 
@@ -89,31 +89,32 @@
 
 **Tareas técnicas**
 
-- ☐ Guardar el usuario en `SharedPreferences` al iniciar sesión y verificarlo al abrir `LoginActivity`
-- ☐ Borrar `SharedPreferences` en «Salir»
-- ☐ Build → Generate Signed App Bundle or APK → APK release con keystore propio
-- ☐ Commit «Sprint 4: reportes, sesión y APK» y tag `v1.0`
+- ☑ Guardar el usuario en `SharedPreferences` al iniciar sesión y verificarlo al abrir `LoginActivity`
+- ☑ Borrar `SharedPreferences` en «Salir»
+- ☑ Build → Generate Signed App Bundle or APK → APK release con keystore propio
+- ☑ Commit «Sprint 4: reportes, sesión y APK» y tag `v1.0`
 
-**Estado:** ☐ Por hacer · ☐ En curso · ☐ Hecho — Commit: ____________________
+**Estado:** ☐ Por hacer · ☐ En curso · ☑ Hecho — Commit: Sprint 4: HU-13 sesión recordada y APK instalable
 
 ## Bitácora Daily
 
 | Fecha | ¿Qué hice? | ¿Qué haré hoy? | ¿Qué me bloquea? |
 | --- | --- | --- | --- |
-| | | | |
-| | | | |
+| 05/10/2026 | Creación de PedidoListoActivity, integración con Intents wa.me/51 y manejo de ActivityNotFoundException | Implementar PedidoAdminDao, PedidosActivity y DetallePedidoActivity para el rol de administrador | Ninguno |
+| 05/10/2026 | Desarrollo de la atención de pedidos con transacción atómica en SQLite, descuento de stock y vista de pedidos por estado | Crear ReporteDao, ReportesActivity con alerta de stock bajo y ClientesActivity | Ninguno |
+| 05/10/2026 | Implementación de ReportesActivity, ClientesActivity, persistencia de sesión con SharedPreferences y preparación de la compilación release | Finalizar la documentación del proyecto y verificar la compilación APK | Ninguno |
 
 ## Sprint Review
 
 | Historia | ¿Cumple la DoD? | Evidencia (captura / commit) | Visto bueno PO |
 | --- | --- | --- | --- |
-| HU-10 | ☐ Sí ☐ No | | |
-| HU-11 | ☐ Sí ☐ No | | |
-| HU-12 | ☐ Sí ☐ No | | |
-| HU-13 | ☐ Sí ☐ No | | |
+| HU-10 | ☑ Sí ☐ No | Commit: Sprint 4: HU-10 aviso del pedido por WhatsApp | Aprobado |
+| HU-11 | ☑ Sí ☐ No | Commit: Sprint 4: HU-11 lista de pedidos y atención | Aprobado |
+| HU-12 | ☑ Sí ☐ No | Commit: Sprint 4: HU-12 reportes y clientes | Aprobado |
+| HU-13 | ☑ Sí ☐ No | Commit: Sprint 4: HU-13 sesión recordada y APK instalable | Aprobado |
 
 ## Retrospectiva
 
 | ¿Qué funcionó? | ¿Qué mejorar? | Acción para el próximo sprint |
 | --- | --- | --- |
-| | | |
+| La integración sin fisuras con WhatsApp mediante Intents implícitos Uri `wa.me`, la gestión de sesión persistente con SharedPreferences y la automatización de consultas analíticas para reportes. | Optimizar el manejo de permisos y disponibilidad de paquetes externos en diferentes versiones de Android. | Mantener las buenas prácticas de arquitectura DAO y versionado de base de datos SQLite para futuras actualizaciones. |

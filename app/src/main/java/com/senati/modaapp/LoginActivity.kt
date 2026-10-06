@@ -13,6 +13,14 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val prefs = getSharedPreferences("sesion", MODE_PRIVATE)
+        val guardado = prefs.getString("nombre", null)
+        if (guardado != null) {
+            irAlMenu(guardado, prefs.getString("rol", "") ?: "")
+            return
+        }
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -21,6 +29,14 @@ class LoginActivity : AppCompatActivity() {
         binding.btnVerCatalogo.setOnClickListener {
             startActivity(Intent(this, CatalogoActivity::class.java))
         }
+    }
+
+    private fun irAlMenu(nombre: String, rol: String) {
+        val intent = Intent(this, MenuActivity::class.java)
+        intent.putExtra("nombre", nombre)
+        intent.putExtra("rol", rol)
+        startActivity(intent)
+        finish()
     }
 
     private fun validarLogin() {
@@ -43,11 +59,11 @@ class LoginActivity : AppCompatActivity() {
 
         val user = DBHelper(this).validarUsuario(usuario, clave)
         if (user != null) {
-            val intent = Intent(this, MenuActivity::class.java)
-            intent.putExtra("nombre", user.usuario)
-            intent.putExtra("rol", user.rol)
-            startActivity(intent)
-            finish()
+            getSharedPreferences("sesion", MODE_PRIVATE).edit()
+                .putString("nombre", user.usuario)
+                .putString("rol", user.rol)
+                .apply()
+            irAlMenu(user.usuario, user.rol)
         } else {
             Toast.makeText(this, R.string.error_credenciales, Toast.LENGTH_SHORT).show()
         }

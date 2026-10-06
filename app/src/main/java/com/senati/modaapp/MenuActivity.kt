@@ -2,7 +2,6 @@ package com.senati.modaapp
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.senati.modaapp.databinding.ActivityMenuBinding
 
@@ -32,18 +31,19 @@ class MenuActivity : AppCompatActivity() {
         }
 
         binding.cardPedidos.setOnClickListener {
-            Toast.makeText(this, "${getString(R.string.menu_pedidos)} - ${getString(R.string.msg_pantalla_en_desarrollo)}", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, PedidosActivity::class.java))
         }
 
         binding.cardClientes.setOnClickListener {
-            Toast.makeText(this, "${getString(R.string.menu_clientes)} - ${getString(R.string.msg_pantalla_en_desarrollo)}", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ClientesActivity::class.java))
         }
 
         binding.cardReportes.setOnClickListener {
-            Toast.makeText(this, "${getString(R.string.menu_reportes)} - ${getString(R.string.msg_pantalla_en_desarrollo)}", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ReportesActivity::class.java))
         }
 
         binding.btnSalir.setOnClickListener {
+            getSharedPreferences("sesion", MODE_PRIVATE).edit().clear().apply()
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()

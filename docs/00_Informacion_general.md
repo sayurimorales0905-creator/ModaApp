@@ -82,7 +82,7 @@ Los pedidos llegan por mensajes sueltos, no se sabe qué tallas y colores quedan
 **Definition of Ready (antes de empezar)**
 
 - ☑ Está escrita como «Como… quiero… para…».
-- ☑ Tiene criterios de aceptación verificables.
+- ☑ Tiene criterios de acceptance verificables.
 - ☑ Tiene puntos estimados.
 - ☑ Tiene su prototipo de pantalla.
 - ☑ Las tablas que usa están definidas.
@@ -133,10 +133,10 @@ Total: **13 historias · 55 puntos** (Fibonacci). Prioridad MoSCoW.
 | HU-07 | Editar, eliminar y buscar ropa (administrador) | Alta (Must) | 3 | 3 | ☑ Hecho |
 | HU-08 | Carrito de compras (cliente) | Alta (Must) | 5 | 3 | ☑ Hecho |
 | HU-09 | Hacer pedido con el número de teléfono (cliente) | Alta (Must) | 8 | 3 | ☑ Hecho |
-| HU-10 | Avisar el pedido por WhatsApp al cliente y al administrador (cliente) | Alta (Must) | 5 | 4 | ☐ |
-| HU-11 | Lista de pedidos y atención (administrador) | Alta (Must) | 5 | 4 | ☐ |
-| HU-12 | Reportes: pedidos atendidos, stock y clientes (administrador) | Alta (Must) | 5 | 4 | ☐ |
-| HU-13 | Sesión recordada y APK instalable (administrador) | Media (Should) | 3 | 4 | ☐ |
+| HU-10 | Avisar el pedido por WhatsApp al cliente y al administrador (cliente) | Alta (Must) | 5 | 4 | ☑ Hecho |
+| HU-11 | Lista de pedidos y atención (administrador) | Alta (Must) | 5 | 4 | ☑ Hecho |
+| HU-12 | Reportes: pedidos atendidos, stock y clientes (administrador) | Alta (Must) | 5 | 4 | ☑ Hecho |
+| HU-13 | Sesión recordada y APK instalable (administrador) | Media (Should) | 3 | 4 | ☑ Hecho |
 
 ## 6. Prototipos de pantallas
 
